@@ -1,8 +1,14 @@
 
 *{
     margin: 0;
-}.auth-main {
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background-color: #192734;
+}
+.auth-main {
     display: flex;
+    flex-direction: row;
     width: 100%;
     background-color: #071829;
 }
@@ -11,10 +17,12 @@
 }
 .auth-left img{
     width: 100%;
+    height: auto;
 }
 .auth-right {
     display: flex;
     flex-direction: column;
+    padding: 0 10%;
     align-items: center;
 }
 .auth-top {
@@ -25,13 +33,11 @@
     color: white;
 }
 .auth-logo {
-    font-size: 35px;
+    font-size: 25px;
     padding: 20px;
+    font-weight: 1000;
 }
 .auth-logo span {
-    font-family:Arial, Helvetica, sans-serif;
-    font-size: 25px;
-    font-weight: 1000;
     padding: 10px;
     background-color: #10b7ff;
     border-radius: 10px;
@@ -42,8 +48,8 @@
 }
 .auth-box {
     margin-top: 40%;
-    
     display: flex;
+    width: fit-content;
     flex-direction: column;
     padding: 20px 35px;
     align-items: center;
@@ -51,7 +57,6 @@
     background-color: #142434;
     border: #cccccc46 solid 0.1px;
     border-radius: 30px;
-    font-family: Arial, Helvetica, sans-serif;
 }
 .auth-title{
     font-size: 25px;
@@ -87,6 +92,7 @@
     transition: 0.3s;
     align-items: center;
     cursor: pointer;
+    letter-spacing: 1px;
 }
 .auth-button:hover {
     background-color: #2b3b4a;
@@ -95,7 +101,7 @@
     font-size: 15px;
     font-weight: 550;
     padding-left: 10px;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
 }
 .link-text{
     font-size: 15px;
@@ -105,6 +111,18 @@
     color: rgb(0, 179, 255);
     cursor: pointer;
 }
+@media screen and (max-width: 768px) {
+    .auth-main {
+      flex-direction: column;
+    }
+    .auth-left, .auth-right {
+      flex-grow: 1;
+    }
+    .auth-box {
+        margin:0;
+        width: 100%;
+    }
+  }
 .dialog-overlay {
     position: fixed;
     top: 0;
@@ -128,8 +146,13 @@
     width: 300px;
     padding: 40px 0;
 }
-
+.auth-title1{
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
 .auth-input {
+    background-color: #fff;
     padding: 5px;
     border: none;
     border-radius: 5px;
@@ -146,11 +169,99 @@
     color: white;
     background-color: #0097d8;
     transition: 0.5s;
+    cursor: pointer;
 }
 .auth-submit:hover {
     background-color: #0775a5;
 }
 .auth-error-message {
     font-size: 12px;
-    color: red;
+    color: rgb(255, 66, 66);
+    font-weight: 600;
+}
+.navbar-main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 5px 5%;
+    border-bottom: #4f6b86 solid 1px;
+}
+.navbar-signout{
+    font-size: 20px;
+    font-weight: 550;
+    color: #00b2ff;
+    cursor: pointer;
+}
+.home-main{
+    background-color: #192734;
+}
+.home-content{
+    padding: 20px 0px 0px 7%;
+    color: white;
+}
+.home-top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 5%;
+}
+.home-title{
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.home-slider{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 15px 20px 15px 0px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.home-slider::-webkit-scrollbar {
+    display: none;
+}
+.home-card{
+    border: #cccccc8b 1px solid;
+    border-radius: 15px;
+    padding: 15px 20px;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    flex: 0 0 auto;
+}
+.home-sub{
+    display: flex;
+    flex-direction: row;
+}
+.card-img{
+    width: 30%;
+    height: auto;
+    padding: 0px 10px 0 0;
+}
+.home-card-cont{
+    flex-direction: column;
+    letter-spacing: 1px;
+}
+.home-card-title{
+    font-size: 16px;
+    font-weight: 600;
+}
+.home-card-desc{
+    padding-top: 10px;
+    font-size: 13px;
+    font-weight: 300;
+}
+.home-read {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 10px;
+    border: #ccccccc5 solid 1px;
+    border-radius: 5px;
+    text-align: center;
 }

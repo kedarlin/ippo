@@ -28,7 +28,9 @@ const Signup = () => {
     const handleEmailSignupClick = () => {
         setDialogOpen(true);
     };
-
+    const handleGoogleSignup = () => {
+        signInWithGoogle();
+    }
     const handleCloseDialog = () => {
         setDialogOpen(false);
     };
@@ -47,6 +49,7 @@ const Signup = () => {
         }
 
         createUserWithEmailAndPassword(email, password);
+        console.log(userCred);
     };
 
 
@@ -55,7 +58,7 @@ const Signup = () => {
             <div className='auth-title'>Sign Up</div>
             <div className='auth-title-desc'>Choose a sign up method</div>
             <div className='auth-buttons'>
-                <div className='auth-button' onClick={() => signInWithGoogle()}>
+                <div className='auth-button' onClick={handleGoogleSignup}>
                     <img src='/Assets/google.png' alt='auth-google-icon' className='auth-button-icons' />
                     <div className='auth-button-name'>Sign Up with Google</div>
                 </div>

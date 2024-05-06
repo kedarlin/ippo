@@ -66,7 +66,7 @@ const Login = () => {
             {dialogOpen && (
                 <div className="dialog-overlay" onClick={handleCloseDialog}>
                     <div className="dialog-content" onClick={(e) => e.stopPropagation()}>
-                        <div className='auth-title' style={{ paddingBottom: "30px" }}>Login</div>
+                        <div className='auth-title1' style={{ paddingBottom: "30px" }}>Login</div>
                         <input
                             className='auth-input'
                             type="email"
@@ -84,7 +84,7 @@ const Login = () => {
                         <div className="auth-error-message">{eror || ( error && FIREBASE_ERRORS[error.message]) }</div>
                         <button onClick={handleSubmit} className='auth-submit'>Login</button>
                         <div className="link-container">
-                            <span className="link-text">Don't have an account?  </span>
+                            <span className="link-text">New user?  </span>
                             <span
                                 className="link-texts"
                                 onClick={handleSignupClick}
