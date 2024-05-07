@@ -32,11 +32,12 @@ const Login = () => {
     };
 
     const handleSubmit = () => {
-        if(password==='' || email==='') setEror("Enter the username and password");
-        if(eror) setEror('');
-        console.log(email, password);
+        if (eror) setEror('');
+        if (password === '' || email === '') {
+            setEror("Enter the email and password");
+            return;
+        }
         signInWithEmailAndPassword(email, password);
-        console.log(error);
     };
 
     return (
@@ -81,7 +82,7 @@ const Login = () => {
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                         />
-                        <div className="auth-error-message">{eror || ( error && FIREBASE_ERRORS[error.message]) }</div>
+                        <div className="auth-error-message">{eror || (error && FIREBASE_ERRORS[error.message])}</div>
                         <button onClick={handleSubmit} className='auth-submit'>Login</button>
                         <div className="link-container">
                             <span className="link-text">New user?  </span>

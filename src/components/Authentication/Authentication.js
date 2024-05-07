@@ -18,12 +18,10 @@ const Authentication = () => {
                     <div className='auth-logo'>Lo  <span>GO</span></div>
                     <div className='auth-desc'>Journey to a trillion miles starts from here!!</div>
                 </div>
-                <div className='auth'>
-                    {
-                        view==='login' && <Login /> ||
-                        view==='signup' && <Signup />
-                    }
-                </div>
+                {
+                    view === 'login' && <Login /> ||
+                    view === 'signup' && <Signup />
+                }
             </div>
         </div>
     );

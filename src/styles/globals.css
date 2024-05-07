@@ -14,15 +14,16 @@ body{
 }
 .auth-left, .auth-right {
     flex: 1;
+    width: 100%;
 }
 .auth-left img{
     width: 100%;
-    height: auto;
+    height: 100vh;
+    object-fit: cover;
 }
 .auth-right {
     display: flex;
     flex-direction: column;
-    padding: 0 10%;
     align-items: center;
 }
 .auth-top {
@@ -47,11 +48,11 @@ body{
     letter-spacing: 1px;
 }
 .auth-box {
-    margin-top: 40%;
+    margin-top: 30%;
     display: flex;
     width: fit-content;
     flex-direction: column;
-    padding: 20px 35px;
+    padding: 20px 50px;
     align-items: center;
     color: white;
     background-color: #142434;
@@ -118,9 +119,13 @@ body{
     .auth-left, .auth-right {
       flex-grow: 1;
     }
+    .auth-right{
+        margin-top: -50%;
+    }
     .auth-box {
-        margin:0;
-        width: 100%;
+        margin-top: 5%;
+        width: 90%;
+        padding: 15px 20px;
     }
   }
 .dialog-overlay {
@@ -143,7 +148,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 300px;
+    width: 400px;
     padding: 40px 0;
 }
 .auth-title1{
@@ -158,6 +163,11 @@ body{
     border-radius: 5px;
     margin-bottom: 15px;
     height: 20px;
+    width: 50%;
+}
+.auth-input:hover{
+    background-color: #ccc;
+    border: none;
 }
 .auth-submit {
     padding: 5px 10px;
@@ -213,19 +223,27 @@ body{
     font-weight: 600;
     letter-spacing: 1px;
 }
+.home-icons{
+    border: #415568 solid 1px;
+    padding: 5px 10px;
+    margin-right: 5px;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
 .home-slider{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     padding: 15px 20px 15px 0px;
-    overflow-x: auto;
+    overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
 }
 .home-slider::-webkit-scrollbar {
     display: none;
 }
 .home-card{
-    border: #cccccc8b 1px solid;
+    border: #415568 2px solid;
     border-radius: 15px;
     padding: 15px 20px;
     margin-right: 20px;
@@ -248,20 +266,39 @@ body{
     letter-spacing: 1px;
 }
 .home-card-title{
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
 }
 .home-card-desc{
     padding-top: 10px;
-    font-size: 13px;
-    font-weight: 300;
+    font-size: 12px;
+    font-weight:lighter;
+    letter-spacing: 1.5px;
 }
 .home-read {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
     letter-spacing: 1px;
-    padding: 10px;
-    border: #ccccccc5 solid 1px;
+    padding: 15px;
+    border: #415568 solid 2px;
     border-radius: 5px;
     text-align: center;
+    cursor: pointer;
+    transition: 0.5s;
+    margin: 10px 0;
+}
+.home-read:hover{
+    background-color: #2b3b4a;
+}
+@media screen and (max-width: 480px) {
+    .home-sub{
+        flex-direction: column;
+        align-items: center;
+    }
+    .home-card{
+        width: 80%;
+    }
+    .home-read{
+        display: none;
+    }
 }

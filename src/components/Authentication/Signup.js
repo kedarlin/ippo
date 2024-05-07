@@ -36,20 +36,28 @@ const Signup = () => {
     };
 
     const handleSubmit = async () => {
+        if (error) setError('');
+        if (email === '' || password === '' || confirmPassword === '') {
+            setError("Enter all Fields");
+            return;
+        }
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const passwordRegex = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+
+        if (!emailRegex.test(email)) {
+            setError('Invalid email address');
+            return;
+        }
+
         if (password !== confirmPassword) {
             setError('Passwords do not match');
             return;
         }
-
-        if (error) setError('');
-        console.log(password, confirmPassword);
-        if (password !== confirmPassword) {
-            setError('Passwords do not match!');
+        if (!passwordRegex.test(password)) {
+            setError('Password must contain at least 8 characters, including at least one digit, one special character, one uppercase letter, and one lowercase letter.');
             return;
         }
-
         createUserWithEmailAndPassword(email, password);
-        console.log(userCred);
     };
 
 
@@ -102,7 +110,7 @@ const Signup = () => {
                             value={confirmPassword}
                             onChange={(e) => setConfirmPassword(e.target.value)}
                         />
-                        <div className="auth-error-message">{error || ( userError && FIREBASE_ERRORS[userError.message]) }</div>
+                        <div className="auth-error-message">{error || (userError && FIREBASE_ERRORS[userError.message])}</div>
                         <button onClick={handleSubmit} className='auth-submit' disabled={loading}>
                             {loading ? 'Signing Up...' : 'Sign Up'}
                         </button>
